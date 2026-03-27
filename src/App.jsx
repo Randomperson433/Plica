@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
-import Ligatura from './ligatura'
+import Ligatura from './Ligatura'
 import Mensura from './Mensura'
 import Signa from './Signa'
 import Colores from './Colores'
