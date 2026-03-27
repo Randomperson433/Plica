@@ -79,7 +79,7 @@ function drawNote(ctx, type, x, y, style, color) {
     } else {
       strokeRect(ctx, x, y, bw, NH, lw)
     }
-    stem(ctx, x + bw, y + NH, y + NH + stemLen, lw)
+    stem(ctx, x + bw - 1, y + NH, y + NH + stemLen, lw)
 
   } else if (type === 'B') {
     // Breve: rectangle, no stem
@@ -106,7 +106,7 @@ function drawNote(ctx, type, x, y, style, color) {
     } else {
       strokeDiamond(ctx, cx, cy, DW / 2, DH / 2, lw)
     }
-    stem(ctx, cx, cy - DH / 2, cy - DH / 2 - stemLen, lw)
+    stem(ctx, cx, cy, cy - DH / 2 - stemLen, lw)
   }
 }
 
@@ -343,7 +343,7 @@ function drawColoresDecor(canvas) {
   const variants = [
     { color: '#1a1108', hollow: false, label: 'Black' },
     { color: '#1a1108', hollow: true,  label: 'White' },
-    { color: '#8b1a1a', hollow: true,  label: 'Red'   },
+    { color: '#8b1a1a', hollow: false, label: 'Red'   },
   ]
 
   const layouts = [layoutLigSpec(spec)]
