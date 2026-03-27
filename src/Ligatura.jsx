@@ -411,7 +411,7 @@ export default function Ligatura() {
 
   const inputCls = `lig-input${inputState==='correct'?' lig-input-correct':inputState==='wrong'?' lig-input-wrong':''}`
   const meta = MODE_META[mode] || MODE_META.easy
-  const MSGS = [[90,'Worthy of Franco of Cologne himself.'],[70,'A fine scribe in the making.'],[50,'The treatises await further study.'],[0,'Return to the scriptorium.']]
+  const MSGS = [[90,'Franco of Cologne would be proud.'],[70,'A scribe in the making.'],[50,'The treatises await further study.'],[0,'Return to the scriptorium.']]
   const pct = total > 0 ? Math.round(correct/total*100) : 0
 
   return (
