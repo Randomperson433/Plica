@@ -473,7 +473,7 @@ export default function Ligatura() {
                     className={inputCls}
                     type="text"
                     value={inputVal}
-                    placeholder={q.ligs.length>1 ? `e.g. ${q.answers[0]}` : 'e.g. LBL'}
+                    placeholder={q.ligs.length>1 ? 'e.g. LB BB LBL' : 'e.g. LBL'}
                     autoComplete="off"
                     spellCheck={false}
                     disabled={answered}
