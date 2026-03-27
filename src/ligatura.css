@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
+html, body {
+    background: #f5edd8;
+    margin: 0;
+    padding: 0;
+  }
+  
 .lig-root *, .lig-root *::before, .lig-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
 .lig-root {
   --ink: #1a1108; --parchment: #f5edd8; --parchment-dark: #e8dcc0; --parchment-deep: #d6c89a;
@@ -8,16 +14,6 @@
   font-family: 'Crimson Pro', Georgia, serif; font-size: 18px;
   min-height: 100vh; display: flex; flex-direction: column; align-items: center;
   padding: 40px 20px 80px; position: relative; overflow-x: hidden;
-}
-.lig-root::before {
-  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(160,120,32,.03) 2px,rgba(160,120,32,.03) 4px),
-    repeating-linear-gradient(90deg,transparent,transparent 3px,rgba(160,120,32,.02) 3px,rgba(160,120,32,.02) 6px);
-}
-.lig-root::after {
-  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image: repeating-linear-gradient(180deg,transparent,transparent 38px,rgba(160,120,32,.07) 38px,rgba(160,120,32,.07) 39px);
 }
 .lig-container { width: 100%; max-width: 780px; position: relative; z-index: 1; }
 
