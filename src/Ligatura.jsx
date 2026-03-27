@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './ligatura.css'
-
+import './stub.css'
 
 // ─── Canvas renderer ──────────────────────────────────────────────────────────
 const W = 16, H = 12, SP = H / 2, STEP = SP, TAIL = 44, SCALE = 2
@@ -323,6 +324,8 @@ function LigatureCanvas({ specs }) {
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function Ligatura() {
+  const navigate = useNavigate()
+
   const [screen, setScreen]       = useState('mode')
   const [mode, setMode]           = useState('easy')
   const [questions, setQuestions] = useState([])
@@ -336,7 +339,7 @@ export default function Ligatura() {
   const [feedback, setFeedback]   = useState('')
   const [showExp, setShowExp]     = useState(false)
   const [showEnterHint, setShowEnterHint] = useState(false)
-  const [results, setResults]     = useState([])  // per-question pip colours
+  const [results, setResults]     = useState([])
   const inputRef = useRef(null)
 
   const q     = questions[current]
@@ -355,7 +358,6 @@ export default function Ligatura() {
     setScreen('quiz')
   }, [])
 
-  // Reset per-question UI when question changes
   useEffect(() => {
     setAnswered(false); setInputVal(''); setInputState('idle')
     setShowHint(false); setFeedback(''); setShowExp(false); setShowEnterHint(false)
@@ -367,7 +369,6 @@ export default function Ligatura() {
     else setCurrent(c => c + 1)
   }, [current, total])
 
-  // After answering, arm Enter-to-advance: wait for key release then listen for next press
   useEffect(() => {
     if (!answered || screen !== 'quiz') return
     function onKeyup(e) {
@@ -422,6 +423,7 @@ export default function Ligatura() {
           {/* Mode screen */}
           {screen === 'mode' && (
             <div className="lig-mode-screen">
+              <button className="stub-back" onClick={() => navigate('/')}>← Plica</button>
               <h1>Ligatura</h1>
               <p className="lig-tagline">A quiz in mensural notation</p>
               <div className="lig-mode-cards">

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f5edd8;
+}
+
+.stub-root {
+  --ink: #1a1108;
+  --parchment: #f5edd8;
+  --parchment-deep: #d6c89a;
+  --gold: #a07820;
+  --faded: #7a6a4a;
+
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 80px;
+}
+
+.stub-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.stub-back {
+  background: transparent;
+  border: 1px solid var(--parchment-deep);
+  color: var(--faded);
+  font-family: 'IM Fell English SC', serif;
+  font-size: 12px;
+  letter-spacing: .1em;
+  padding: 6px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 60px;
+  display: block;
+  transition: background .15s, color .15s;
+}
+
+.stub-back:hover {
+  background: var(--parchment-deep);
+  color: var(--ink);
+}
+
+.stub-content {
+  text-align: center;
+}
+
+.stub-decor {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 28px;
+  letter-spacing: .2em;
+  color: var(--faded);
+  opacity: .5;
+  margin-bottom: 28px;
+}
+
+.stub-decor-signa {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 32px;
+}
+
+.stub-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: .06em;
+  margin: 0 0 6px;
+  line-height: 1;
+}
+
+.stub-subtitle {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--faded);
+  font-size: 16px;
+  margin: 0 0 32px;
+}
+
+.stub-body {
+  font-size: 17px;
+  color: var(--faded);
+  line-height: 1.7;
+  margin: 0 0 36px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stub-badge {
+  display: inline-block;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--faded);
+  border: 1px solid var(--parchment-deep);
+  padding: 5px 16px;
+  border-radius: 1px;
+  opacity: .7;
+}

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f5edd8;
+}
+
+.home-root {
+  --ink: #1a1108;
+  --parchment: #f5edd8;
+  --parchment-dark: #e8dcc0;
+  --parchment-deep: #d6c89a;
+  --gold: #a07820;
+  --faded: #7a6a4a;
+
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px 80px;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 860px;
+}
+
+/* Header */
+.home-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.home-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: .08em;
+  margin: 0 0 6px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.home-tagline {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--faded);
+  font-size: 17px;
+  margin: 0 0 28px;
+}
+
+.home-rule {
+  width: 80px;
+  height: 1px;
+  background: var(--parchment-deep);
+  margin: 0 auto;
+  position: relative;
+}
+
+.home-rule::before {
+  content: '✦';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  color: var(--gold);
+  background: var(--parchment);
+  padding: 0 6px;
+}
+
+/* Cards */
+.home-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-card {
+  display: flex;
+  align-items: stretch;
+  background: rgba(255, 255, 255, .38);
+  border: 1px solid var(--parchment-deep);
+  border-left: 3px solid var(--accent, var(--gold));
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(100, 80, 20, .07);
+  transition: background .2s, box-shadow .2s, transform .15s;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.home-card:hover {
+  background: rgba(255, 255, 255, .7);
+  box-shadow: 0 4px 24px rgba(100, 80, 20, .13);
+  transform: translateX(3px);
+}
+
+.home-card-decor {
+  width: 220px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  border-right: 1px solid var(--parchment-deep);
+  background: rgba(255,255,255,.2);
+  overflow: hidden;
+}
+
+.home-card-canvas {
+  display: block;
+  image-rendering: pixelated;
+  max-width: 100%;
+}
+
+.home-card-body {
+  flex: 1;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.home-card-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.home-card-subtitle {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--accent, var(--gold));
+  letter-spacing: .04em;
+  margin-bottom: 6px;
+}
+
+.home-card-desc {
+  font-size: 14px;
+  color: var(--faded);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.home-card-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 20px;
+  color: var(--parchment-deep);
+  transition: color .2s, transform .2s;
+  font-family: 'IM Fell English', serif;
+}
+
+.home-card:hover .home-card-arrow {
+  color: var(--accent, var(--gold));
+  transform: translateX(3px);
+}
+
+/* Coming soon badge on stub cards */
+.home-card-coming {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 9px;
+  letter-spacing: .14em;
+  color: var(--faded);
+  border: 1px solid var(--parchment-deep);
+  padding: 2px 7px;
+  border-radius: 1px;
+  opacity: .7;
+}
+
+/* Footer */
+.home-footer {
+  text-align: center;
+  margin-top: 56px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: var(--faded);
+  opacity: .6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .home-title { font-size: 52px; }
+  .home-card-decor { width: 130px; min-width: 130px; }
+  .home-card-title { font-size: 22px; }
+  .home-card-desc { display: none; }
+}
